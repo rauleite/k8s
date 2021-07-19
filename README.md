@@ -23,3 +23,10 @@
 
 ### Remote 
 `kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080`
+
+## Notion how to install k3os on top of multipass ubuntu
+`./k3os-install.sh --takeover --debug --tty ttyS0 --config /tmp/k3os-config.yaml --no-format /dev/vda1 https://github.com/rancher/k3os/releases/download/v0.20.7-k3s1r0/k3os-amd64.iso`
+
+## Multipass with cloud-init *(ssh pub, in this case)*
+`multipass launch --name k3s-local --mem 1G --disk 10G --cloud-i
+nit=./k3s-config.yaml`
