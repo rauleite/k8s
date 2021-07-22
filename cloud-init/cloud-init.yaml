@@ -1,0 +1,13 @@
+#cloud-config
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/ePNzHkncpfw2dTklxE4yUAKfS3IlLclLh7NR0ISCMAb6JKgnF3yHRWfSOfS4nx/EMtuSAjriSrQgr4nNuigWaXrLwEJzP3ftgin4M427iqqU1QBSjqNRvdcmK7FZLDv0yomGaqmry7dAZCWROZsUAlXFy3EK6dxQ1wZKeRLTDEJUD+REfh7XT6IcBLIHE/3SdLgGoLk/Wv7dBeYbQW64ly9whBIIQ4IAs5IVP9C81EBIuj00uyVkN60fyk+3Cw4zVA4mvAhP3l61ZOnBplC+w/a9lrhs16hja6dzONMPZ8ZMwgBJE1R6jKV1Ul5LKsF0XagIOj8GBhgqkbgCJN/t6AO4lLmdWqPX4EsA7BdKtW4KMV+MZuqYrjRu3zFdxNa0YMaK2XY+Wl95cm3iV9twlOdSWV5rsSO3FpsWi+av6vlBY+vlv0CmOji24Irgx2UunOEjGpwKQgvOWbKgyBBo3BJ5zotZvo0enY09ggwt5Uv5pAt2MS3TT68CwTP/R3k= raul@mac.local
+
+runcmd:
+- curl -SLsf https://get.k3sup.dev | sh
+- mkdir -p /home/ubuntu/.kube/
+- k3sup install --local --local-path /home/ubuntu/.kube/config
+  # - curl -sLfS https://cli.openfaas.com | sh
+  #- HOME=/home/ubuntu k3sup app install openfaas | tee /home/ubuntu/post-install.txt
+  #- echo "export KUBECONFIG=/home/ubuntu/.kube/config" | tee -a /home/ubuntu/.bashrc
+  #- chown ubuntu:ubuntu -R /home/ubuntu/
+  #

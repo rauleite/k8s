@@ -1,0 +1,13 @@
+# Worker (Agent) config
+#
+# After running this installation:
+# The K3s service will be configured to automatically restart after node reboots or if the process crashes or is killed
+# Additional utilities will be installed, including kubectl, crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh
+# A kubeconfig file will be written to /etc/rancher/k3s/k3s.yaml and the kubectl installed by K3s will automatically use it
+
+runcmd:
+  - curl -sfL https://get.k3s.io | K3S_URL=https://192.168.64.8:6443 K3S_TOKEN=jK102d218b6ecb16c11a2945310c4488dc18fc202a17b1f5858dd8986b23a98542ad::server:36fd8144e83f890d929135bcc8fb0cea sh -
+
+
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDPh2+z3p0VImmocLm5tavv55YNvcHeGo9GqheL7Q+t+XDC35L8JG4CGDrc0FkRikpKceR0X/F/UAHYaw52TkiyfG5KrebsBv9gCXWDZUaQiQPwNvQhP+91RPjXgVAVCxj/VmOJbqzryFhkdE1qMyccKjB6FxmOdYq0DxaFuKRh2gfjIc2SwEKoFzWLsp4NWai/+/W2IdhSen+uyJ/ofO2co+jwTX4W/G4EwgATqEHhrC6c8na1ihd8MXvySuLdxUfEOdKbpHKQrhqwCb2Ugs3a2U75tXxtNOUKi5GdBS4NWkn6YMv9UUSd7ipOyuZFs3HZvl5A7XjAqaswHyK896iTAI9/+dP54NtsMUq2c02kqz/gDjWnrpJE6IHrF+ttLhB7Fj7KmN4CxdXe4JLd9POzhvYj/d8L3DWum4/0qMCVwpchQD0tjAF/TFFB2UVO93vEL3My+tPZkfm230+YowQUH6n+lDGfouznFTP+PBi7FF/0D+ucHnzJUgld14MGtUU= raul@mac.local
